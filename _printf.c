@@ -30,6 +30,11 @@ int _printf(const char *format, ...)
 				break;
 			if (*format == 'c')
 				count += _print_char(list_args);
+				
+                        else if (*format == 's')
+				count += _print_string(list_args);
+			else if ((*format == 'd') || (*format == 'i'))
+				count += _print_digit(list_args);
 			else if (*format == '%')
 			{
 				write(1, format, 1);
