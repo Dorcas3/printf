@@ -28,9 +28,9 @@ int _printf(const char *format, ...)
 			if (*format == '\0')
 				break;
 			if (*format == 'c')
-				count += _print_char(var_args(list_args, int));
+				count += _print_char(va_arg(list_args, int));
 			else if (*format == 's')
-				count += _print_string(var_args(list_args, char *));
+				count += _print_string(va_arg(list_args, char *));
 			else if ((*format == 'd') || (*format == 'i'))
 				count += _print_digit(list_args);
 			else if (*format == '%')
