@@ -9,7 +9,5 @@
 int _print_char(va_list chara)
 {
 	char character = va_arg(chara, int);
-
-	write(1, &character, 1);
-	return (1);
+	return (write(1, &character, 1));
 }
