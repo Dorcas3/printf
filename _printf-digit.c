@@ -28,13 +28,8 @@ int _print_digit(va_list digit)
 		num = n;
 
 	for (; num / div > 9; )
-	{
-		printf("num / div: %d\n", (num / div));
-		printf("div: %d\n", div);
 		div *= 10;
-		printf("num here: %d\n", num);
-		printf("check: %d\n", div);
-	}
+
 	for (; div != 0; )
 	{
 		char val = ('0' + (num / div));
