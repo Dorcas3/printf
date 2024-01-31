@@ -20,8 +20,7 @@ int _printf(const char *format, ...)
 	{
 		if (*format != '%')
 		{
-			write(1, format, 1);
-			count++;
+			count += _print_char(*format);
 		}
 		else
 		{
@@ -29,15 +28,14 @@ int _printf(const char *format, ...)
 			if (*format == '\0')
 				break;
 			if (*format == 'c')
-				count += _print_char(list_args);
+				count += _print_char(var_args(list_args, int));
 			else if (*format == 's')
-				count += _print_string(list_args);
+				count += _print_string(var_args(list_args, char *));
 			else if ((*format == 'd') || (*format == 'i'))
 				count += _print_digit(list_args);
 			else if (*format == '%')
 			{
-				write(1, format, 1);
-				count++;
+				count += _print_char('%');
 			}
 		}
 		format++;

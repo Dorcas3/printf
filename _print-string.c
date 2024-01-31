@@ -6,15 +6,14 @@
  * Return: int;
  */
 
-int _print_string(va_list str)
+int _print_string(char *str)
 {
-	char *string = va_arg(str, char *);
 	int str_len = 0;
 
-	while (*string != '\0')
+	while (*str != '\0')
 	{
-		str_len += write(1, string, 1);
-		string++;
+		str_len += _print_char(*str);
+		++str;
 	}
 	return (str_len);
 }
